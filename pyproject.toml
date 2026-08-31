@@ -1,0 +1,100 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lazy-grounding"
+version = "0.1.0"
+description = "Reproducible evaluation of lazy grounding in retrieval-augmented search agents"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+  {name = "Yulin Zhang"},
+  {name = "Yukun Huang"},
+  {name = "Sanxing Chen"},
+  {name = "Tianyi Lin"},
+  {name = "Ziang Yang"},
+  {name = "Xunjian Yin"},
+  {name = "Bhuwan Dhingra"},
+]
+keywords = ["AI safety", "search agents", "retrieval-augmented generation", "evaluation"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "json5>=0.9,<1",
+  "numpy>=1.26,<3",
+  "python-dotenv>=1.0,<2",
+  "PyYAML>=6.0,<7",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+ranker = [
+  "torch>=2.3,<3",
+  "transformers>=4.45,<5",
+]
+browsecomp = ["pyserini>=0.22,<1"]
+gemini = ["google-genai>=1.0,<2"]
+all = [
+  "google-genai>=1.0,<2",
+  "pyserini>=0.22,<1",
+  "torch>=2.3,<3",
+  "transformers>=4.45,<5",
+]
+dev = [
+  "mypy>=1.13,<2",
+  "pytest>=9.0.3,<10",
+  "pytest-cov>=6,<7",
+  "ruff>=0.11,<1",
+  "types-PyYAML>=6.0,<7",
+  "types-requests>=2.32,<3",
+]
+
+[project.scripts]
+lazy-grounding = "lazy_grounding.cli:main"
+
+[project.urls]
+Repository = "https://github.com/frankyzha/lazy-grounding"
+Issues = "https://github.com/frankyzha/lazy-grounding/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lazy_grounding"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+source = ["lazy_grounding"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["A", "B", "BLE", "C4", "DTZ", "E", "F", "I", "N", "PERF", "PIE", "PL", "RUF", "S", "SIM", "UP"]
+ignore = ["PLR0913"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "PLR2004"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true

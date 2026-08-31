@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Lazy Grounding"
+type: software
+version: 0.1.0
+date-released: 2026-08-30
+license: Apache-2.0
+authors:
+  - family-names: Zhang
+    given-names: Yulin
+  - family-names: Huang
+    given-names: Yukun
+  - family-names: Chen
+    given-names: Sanxing
+  - family-names: Lin
+    given-names: Tianyi
+  - family-names: Yang
+    given-names: Ziang
+  - family-names: Yin
+    given-names: Xunjian
+  - family-names: Dhingra
+    given-names: Bhuwan
+repository-code: "https://github.com/frankyzha/lazy-grounding"
+preferred-citation:
+  type: conference-paper
+  title: "Lazy Grounding: Attacking Search Agents with Factual Evidence"
+  year: 2026
+  conference:
+    name: "Conference on Empirical Methods in Natural Language Processing"
+  authors:
+    - family-names: Zhang
+      given-names: Yulin
+    - family-names: Huang
+      given-names: Yukun
+    - family-names: Chen
+      given-names: Sanxing
+    - family-names: Lin
+      given-names: Tianyi
+    - family-names: Yang
+      given-names: Ziang
+    - family-names: Yin
+      given-names: Xunjian
+    - family-names: Dhingra
+      given-names: Bhuwan

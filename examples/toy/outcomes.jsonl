@@ -1,0 +1,6 @@
+{"augmented_correct":false,"clean_correct":true,"item_id":"q1","nearby_adopted":true,"replicate":1}
+{"augmented_correct":true,"clean_correct":true,"item_id":"q1","nearby_adopted":false,"replicate":2}
+{"augmented_correct":false,"clean_correct":true,"item_id":"q1","nearby_adopted":true,"replicate":3}
+{"augmented_correct":false,"clean_correct":false,"item_id":"q2","nearby_adopted":true,"replicate":1}
+{"augmented_correct":true,"clean_correct":false,"item_id":"q2","nearby_adopted":false,"replicate":2}
+{"augmented_correct":false,"clean_correct":false,"item_id":"q2","nearby_adopted":false,"replicate":3}

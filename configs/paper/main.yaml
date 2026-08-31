@@ -1,0 +1,69 @@
+defaults:
+  sample_size: 100
+  sample_seed: 20260524
+  run_seed: 20260522
+  replicates: 3
+  judge_model: gpt-5.4
+  summarizer:
+    provider: openai_chat
+    model: gpt-5-nano
+    max_output_tokens: 4000
+    timeout_seconds: 200
+  retrieval:
+    embedding_model: google/embeddinggemma-300m
+    embedding_revision: 57c266a740f537b4dc058e1b0cda161fd15afa75
+    embedding_device: auto
+    embedding_max_length: 512
+    real_candidates: 10
+    nearby_records: 10
+    top_k: 10
+    display_url_style: top_real
+    display_base_alias_mode: contam_if_shown
+    query_adaptive_snippets: true
+  agent:
+    max_llm_calls: 120
+    max_output_tokens: 10000
+    max_wall_time_seconds: 2400
+    max_context_tokens: 112640
+    temperature: 0.6
+    top_p: 0.95
+    presence_penalty: 1.1
+  metadata:
+    evidence_style: answer_field
+    rewrite_selection: single_transfer
+    require_prepared_evidence: true
+
+datasets:
+  xbench:
+    benchmark: xbench-deepsearch
+    split: test
+    retrieval:
+      backend: serper
+  gaia:
+    benchmark: gaia
+    split: validation
+    retrieval:
+      backend: serper
+  browsecomp_plus:
+    benchmark: browsecomp-plus
+    split: test
+    retrieval:
+      backend: browsecomp_bm25
+      browsecomp_index_path: ${BROWSECOMP_INDEX_PATH}
+  hle:
+    benchmark: humanitys-last-exam
+    split: test
+    retrieval:
+      backend: serper
+
+models:
+  tongyi:
+    provider: vllm
+    model: Alibaba-NLP/Tongyi-DeepResearch-30B-A3B
+  gpt5mini:
+    provider: openai
+    model: gpt-5-mini
+  gemini3flash:
+    provider: gemini
+    model: gemini-3-flash-preview
+    max_context_tokens: 122880

@@ -1,0 +1,8 @@
+Lazy Grounding
+Copyright 2026 The Lazy Grounding Authors
+
+This repository includes interfaces and prompt conventions derived from the
+Apache-2.0-licensed Tongyi DeepResearch project. It can optionally interoperate
+with Tongyi DeepResearch and SandboxFusion. Those projects are not redistributed
+here and remain governed by their respective licenses. See
+docs/THIRD_PARTY.md for pinned versions and attribution.

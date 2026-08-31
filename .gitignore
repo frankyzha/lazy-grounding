@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.env
+.env.*
+!.env.example
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+htmlcov/
+
+# Model, benchmark, and experiment artifacts are intentionally local.
+artifacts/
+data/
+outputs/
+*.jsonl
+*.log
+!examples/**/*.jsonl
+
+# Editors and operating systems.
+.DS_Store
+.idea/
+.vscode/

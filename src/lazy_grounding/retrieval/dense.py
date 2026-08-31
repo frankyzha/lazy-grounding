@@ -30,8 +30,8 @@ class HuggingFaceEncoder:
         device: str = "auto",
         max_length: int = 512,
     ):
-        import torch  # type: ignore[import-not-found]  # noqa: PLC0415
-        from transformers import (  # type: ignore[import-not-found]  # noqa: PLC0415
+        import torch  # noqa: PLC0415
+        from transformers import (  # noqa: PLC0415
             AutoModel,
             AutoTokenizer,
         )

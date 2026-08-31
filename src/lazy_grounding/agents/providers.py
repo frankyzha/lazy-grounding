@@ -153,7 +153,7 @@ class GeminiProvider:
         if not api_key.strip():
             raise ValueError("GEMINI_API_KEY is required")
         try:
-            from google import genai  # type: ignore[import-not-found]  # noqa: PLC0415
+            from google import genai  # noqa: PLC0415
         except ImportError as exc:  # pragma: no cover - depends on optional installation
             raise RuntimeError("Install lazy-grounding[gemini] to use Gemini") from exc
         self.config = config
@@ -179,7 +179,7 @@ class GeminiProvider:
         return code is None or code in _RETRYABLE_STATUS
 
     def generate(self, messages: Sequence[Message]) -> ModelReply:
-        from google.genai import types  # type: ignore[import-not-found]  # noqa: PLC0415
+        from google.genai import types  # noqa: PLC0415
 
         system = "\n\n".join(
             message["content"] for message in messages if message["role"] == "system"

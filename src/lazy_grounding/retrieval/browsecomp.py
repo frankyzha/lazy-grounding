@@ -14,7 +14,7 @@ from lazy_grounding.schemas import SearchCandidate
 class BrowseCompBackend:
     def __init__(self, index_path: Path, *, snippet_characters: int = 500):
         try:
-            from pyserini.search.lucene import (  # type: ignore[import-not-found]  # noqa: PLC0415
+            from pyserini.search.lucene import (  # noqa: PLC0415
                 LuceneSearcher,
             )
         except ImportError as exc:

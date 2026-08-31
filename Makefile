@@ -1,4 +1,4 @@
-.PHONY: build check format test
+.PHONY: audit build check format test
 
 check:
 	uv run ruff check .
@@ -15,3 +15,8 @@ test:
 
 build:
 	uv build
+
+audit:
+	uv run vulture src tests --min-confidence 80
+	uv run bandit -q -r src
+	uv run pip-audit --local --skip-editable --progress-spinner off

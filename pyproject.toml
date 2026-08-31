@@ -51,12 +51,15 @@ all = [
   "transformers>=4.45,<5",
 ]
 dev = [
+  "bandit>=1.9,<2",
   "mypy>=1.13,<2",
+  "pip-audit>=2.9,<3",
   "pytest>=9.0.3,<10",
   "pytest-cov>=6,<7",
   "ruff>=0.11,<1",
   "types-PyYAML>=6.0,<7",
   "types-requests>=2.32,<3",
+  "vulture>=2.14,<3",
 ]
 
 [project.scripts]
@@ -95,6 +98,5 @@ ignore = ["PLR0913"]
 "tests/**/*.py" = ["S101", "PLR2004"]
 
 [tool.mypy]
-python_version = "3.10"
 strict = true
 warn_unreachable = true

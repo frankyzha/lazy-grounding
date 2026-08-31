@@ -132,8 +132,8 @@ make check
 make build
 ```
 
-CI runs formatting, linting, strict type checking, tests, branch coverage, and
-package builds on Python 3.10 and 3.12.
+CI runs formatting, linting, strict type checking, dead-code and security
+audits, tests, branch coverage, and package builds on Python 3.10 and 3.12.
 
 ## Citation
 

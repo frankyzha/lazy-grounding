@@ -40,7 +40,7 @@ dependencies = [
 [project.optional-dependencies]
 ranker = [
   "torch>=2.3,<3",
-  "transformers>=4.45,<5",
+  "transformers>=4.45,<6",
 ]
 browsecomp = ["pyserini>=0.22,<1"]
 gemini = ["google-genai>=1.0,<2"]
@@ -48,7 +48,7 @@ all = [
   "google-genai>=1.0,<2",
   "pyserini>=0.22,<1",
   "torch>=2.3,<3",
-  "transformers>=4.45,<5",
+  "transformers>=4.45,<6",
 ]
 dev = [
   "bandit>=1.9,<2",

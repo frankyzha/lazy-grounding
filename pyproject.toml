@@ -42,11 +42,11 @@ ranker = [
   "torch>=2.3,<3",
   "transformers>=4.45,<5",
 ]
-browsecomp = ["pyserini>=0.22,<1"]
+browsecomp = ["pyserini>=0.22,<2"]
 gemini = ["google-genai>=1.0,<2"]
 all = [
   "google-genai>=1.0,<2",
-  "pyserini>=0.22,<1",
+  "pyserini>=0.22,<2",
   "torch>=2.3,<3",
   "transformers>=4.45,<5",
 ]
